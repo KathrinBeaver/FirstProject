@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        typesExample();
-        arraysExample();
-        exceptionsExampleInt();
+//        typesExample();
+//        arraysExample();
+//        exceptionsExampleInt();
         exceptionsExampleFloat();
     }
 
@@ -17,6 +17,11 @@ public class Main {
     private static void arraysExample() {
         int[] array = new int[10];
         Arrays.fill(array, 1000);
+
+        int[] array2 = Arrays.copyOf(array, 20);
+        for (int i = 0; i < array2.length; i++) {
+            System.out.println(array2[i]);
+        }
 
         for(int el : array) {
             System.out.println(el);
@@ -56,7 +61,7 @@ public class Main {
     }
 
     private static void exceptionsExampleFloat() {
-        float a = 10, b = 0, res = 0;
+        float a = -1, b = 0, res = 0;
 
         try {
             res = a / b;
@@ -66,6 +71,10 @@ public class Main {
             System.out.println(e.getMessage());
         }
         System.out.println(res);
+        System.out.println(res + 10);
+        System.out.println(res + 100000000);
+        System.out.println(res * 0);
+        System.out.println((res + 1.0) / 0);
     }
 
 }
